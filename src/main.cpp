@@ -36,8 +36,10 @@ void cylonMulticolour()
 void blinkLED()
 {
   digitalWrite(DATA_PIN, HIGH);
+  digitalWrite(CLOCK_PIN, HIGH);
   delay(500);
   digitalWrite(DATA_PIN, LOW);
+  digitalWrite(CLOCK_PIN, LOW);
   delay(500);
 }
 
@@ -46,6 +48,7 @@ void setup() {
   FastLED.addLeds<APA102, DATA_PIN, CLOCK_PIN, BGR>(leds, NUM_LEDS);
   FastLED.setBrightness(20);
   pinMode(DATA_PIN, OUTPUT);
+  pinMode(CLOCK_PIN, OUTPUT);
 }
 
 void loop() {
